@@ -18,7 +18,10 @@ public class AnnotationDemoApp {
 		
 		System.out.println(theCoach.getDailyWorkout());
 		//close the context
+		
+		SoccerCoach coaches = context.getBean("master_Coach", SoccerCoach.class);
 
+		System.out.println(coaches.WorkoutInstructions());
 			context.close();
 	}
 	
