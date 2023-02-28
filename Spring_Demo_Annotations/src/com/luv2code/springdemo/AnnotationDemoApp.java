@@ -7,21 +7,27 @@ public class AnnotationDemoApp {
 	
 	//Retrieve bean from spring container
 	public static void main(String[] args) {
+		
 		// Read Spring config file
-		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		//get bean from spring container
 		
+		
+		//get bean from spring container	
 		//Use default bean id, same name as class, first letter is lowercase.
 		coach theCoach = context.getBean("tennisCoach", coach.class);
-		//call a method on the bean
 		
+		//call a method on the bean
 		System.out.println(theCoach.getDailyWorkout());
-		//close the context
 		
 		SoccerCoach coaches = context.getBean("master_Coach", SoccerCoach.class);
 
-		System.out.println(coaches.WorkoutInstructions());
+		//System.out.println(coaches.WorkoutInstructions());
+		
+		
+		//Call method to get daily fortune
+		System.out.println(theCoach.getDailyFortune());
+		
+		//close the context
 			context.close();
 	}
 	
